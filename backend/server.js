@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const cors = require("cors");
 const app = express();
 const colors = require("colors");
 const userRoutes = require("./routes/userRoutes");
@@ -12,8 +13,15 @@ const bodyParser = require("body-parser");
 dotenv.config();
 
 connectDB();
+app.use(cors({
+  origin: "https://mern-chatapp-fe1h.vercel.app", // Your deployed frontend
+  credentials: true,
+}));
+
 app.use(express.json());
 app.use(bodyParser.json()); //to acess json data
+
+
 
 app.get("/", (req, res) => {
   res.send("API is running sucessfully");
@@ -36,7 +44,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://mern-chatapp-fe1h.vercel.app",
   },
 });
 
