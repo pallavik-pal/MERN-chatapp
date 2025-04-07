@@ -71,7 +71,8 @@ const MyChats = ({ fetchAgain }) => {
         color="#034078"
         fontWeight="bold"
       >
-               MY Chats
+               
+          Chats
         <GroupChatModal>
           <Button
             display="flex"
