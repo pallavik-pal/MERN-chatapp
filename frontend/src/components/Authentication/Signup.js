@@ -8,9 +8,9 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
-import axios from "axios";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import API from "../../utils/axios";
 const Signup = () => {
   const [show, setShow] = useState(false);
   const [name, setName] = useState();
@@ -98,7 +98,7 @@ const Signup = () => {
           "Content-type": "application/json",
         },
       };
-      const { data } = await axios.post(
+      const { data } = await API.post(
         "/api/user",
         {
           name,

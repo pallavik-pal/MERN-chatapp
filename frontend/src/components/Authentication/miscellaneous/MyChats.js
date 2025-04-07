@@ -2,10 +2,10 @@ import { AddIcon } from "@chakra-ui/icons";
 import { Box, Stack, Text } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/toast";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { getSender } from "../../../config/ChatLogics";
 import { ChatState } from "../../../Context/ChatProvider";
+import API from "../../../utils/axios";
 import ChatLoading from "./ChatLoading";
 import GroupChatModal from "./GroupChatModal";
 
@@ -25,7 +25,7 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
 
-      const { data } = await axios.get("/api/chat", config);
+      const { data } = await API.get("/api/chat", config);
       setChats(data);
     } catch (error) {
       toast({

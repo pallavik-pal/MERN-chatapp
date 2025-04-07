@@ -3,13 +3,13 @@ import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Input } from "@chakra-ui/input";
 import { Box, Text } from "@chakra-ui/layout";
 import { IconButton, Spinner, useToast } from "@chakra-ui/react";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import Lottie from "react-lottie";
 import io from "socket.io-client";
 import animationData from "../animations/typing.json";
 import { getSender, getSenderFull } from "../config/ChatLogics";
 import { ChatState } from "../Context/ChatProvider";
+import API from "../utils/axios";
 import ProfileModal from "./Authentication/miscellaneous/ProfileModal";
 import UpdateGroupChatModal from "./Authentication/miscellaneous/UpdateGroupChatModal";
 import ScrollableChat from "./ScrollableChat";
@@ -50,7 +50,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
       setLoading(true);
 
-      const { data } = await axios.get(
+      const { data } = await API.get(
         `/api/message/${selectedChat._id}`,
         config
       );
@@ -80,7 +80,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           },
         };
 
-        const { data } = await axios.post(
+        const { data } = await API.post(
           "/api/message",
           {
             content: newMessage,

@@ -21,7 +21,6 @@ import {
 import { Spinner } from "@chakra-ui/spinner";
 import { useToast } from "@chakra-ui/toast";
 import { Tooltip } from "@chakra-ui/tooltip";
-import axios from "axios";
 import { useState } from "react";
 
 import { useHistory } from "react-router-dom";
@@ -29,6 +28,7 @@ import { getSender } from "../../../config/ChatLogics";
 
 import NotificationBadge, { Effect } from "react-notification-badge";
 import { ChatState } from "../../../Context/ChatProvider";
+import API from "../../../utils/axios";
 import UserListItem from "../UserAvatar/UserListItem";
 import ChatLoading from "./ChatLoading";
 import ProfileModal from "./ProfileModal";
@@ -77,7 +77,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await API.get(`/api/user?search=${search}`, config);
 
       setLoading(false);
       setSearchResult(data);
@@ -104,7 +104,7 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`/api/chat`, { userId }, config);
+      const { data } = await API.post(`/api/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
