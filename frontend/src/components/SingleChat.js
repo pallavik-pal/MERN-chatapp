@@ -15,7 +15,7 @@ import UpdateGroupChatModal from "./Authentication/miscellaneous/UpdateGroupChat
 import ScrollableChat from "./ScrollableChat";
 import "./style.css";
 
-const ENDPOINT = "http://localhost:7000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+const ENDPOINT = "https://mern-chatapp-uhr2.onrender.com"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
