@@ -14,10 +14,8 @@ dotenv.config();
 
 connectDB();
 app.use(cors({
- origin:[
-    "https://mern-chatapp-pallavik-pals-projects.vercel.app/",     
-    "https://pallavik-pal.github.io",           
-  ],
+ origin:"mern-chatapp-fe1h.vercel.app",         
+  
   credentials: true,
 }));
 
