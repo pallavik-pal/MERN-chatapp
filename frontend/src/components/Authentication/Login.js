@@ -42,7 +42,7 @@ const Login = () => {
         },
       };
       const { data } = await API.post(
-        "/api/user/login",
+        "REACT_APP_API_BASE_URL/api/user/login",
         {
           email,
           password,
