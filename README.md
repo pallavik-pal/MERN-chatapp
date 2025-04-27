@@ -1,4 +1,4 @@
-🗣️ ConvoCore - Real-time Chat Application
+🗣️ ##ConvoCore - Real-time Chat Application
 ConvoCore is a real-time chat application built with the MERN stack (MongoDB, Express.js, React.js, Node.js).
 It allows users to sign up, log in, and chat instantly with others across different sessions or devices.
 
