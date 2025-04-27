@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:7000",
-  "homepage": "https://pallavik-pal.github.io/MERN-chatapp",
+  
 
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",

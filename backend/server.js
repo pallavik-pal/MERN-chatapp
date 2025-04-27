@@ -14,7 +14,7 @@ dotenv.config();
 
 connectDB();
 app.use(cors({
-  origin:[ "https://mern-chatapp-fe1h.vercel.app",'https://pallavik-pal.github.io'], // Your deployed frontend
+  origin:[ "https://mern-chatapp-fe1h.vercel.app",'https://pallavik-pal.github.io',"http://localhost:3000"], // Your deployed frontend
   credentials: true,
 }));
 
